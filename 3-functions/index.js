@@ -13,6 +13,11 @@ let result = mydata.reduce((acc, x) =>
     acc + x.age, 0);
 
   console.log('Средний возраст пользователей:' + Math.floor(result/mydata.length)); 
+
+let result2 = mydata.filter(x=> x.skills.includes('Paint')).map(x=>x.name);
+
+console.log(result2); 
+ 
       
 // // your code...
 // // console.log(count);
