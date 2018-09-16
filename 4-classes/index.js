@@ -14,17 +14,27 @@ const products = content.split(', ');
 
 const Product = function (str) {
 	const value = str.split(' ');
-	this.price = Number(value[0]);
-	this.name = value[1];
-	this.USDPrice = (this.price/67.99).toFixed(2)
+	this.price = {"rur":Number(value[0]),"usd":Number(Number((value[0])/68.04).toFixed(2))};
+	this.title = value[1];
 };
+
 // console.log(typeof(Product));
-// console.log(fxprice);
 
 const newproducts = products.map(x => new Product(x));
+
+
 const newproductsJSON = JSON.stringify(newproducts);
+
 
 fs.writeFileSync(pathToJSONnew, newproductsJSON, 'utf8');
 
 // console.log(typeof(newproducts));
 // console.log(newproducts);
+// function Vehicle(make, model, color) {
+//         this.make = make,
+//         this.model = model,
+//         this.color = color,
+//         this.getName = function () {
+//             return this.make + " " + this.model;
+//         }
+// }
