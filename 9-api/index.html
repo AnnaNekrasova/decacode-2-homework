@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+<body>
+	<input type="text" id="myinput">
+	<button type="button" id="button">Brewery Search</button>
+	<ul id="root"></ul>
+	<script>
+		(()=>{
+			const $button = document.getElementById("button")
+			const $root = document.getElementById("root");
+			let myurl = '';
+			const $myinput = document.getElementById("myinput");
+			$button.addEventListener("click",()=>{
+			$root.innerHTML = '';
+			$myinput.value != ''? myurl='https://api.openbrewerydb.org/breweries?by_name=' + $myinput.value
+			: myurl='https://api.openbrewerydb.org/breweries';
+			fetch(myurl).then(response=>response.json()).then(data=>{
+				for (i = 0; i < data.length; i++) {
+    			let item = '<li>' + Object.values(data[i]) + '</li>';
+    			$root.innerHTML += item;
+				};
+    			});
+    			})
+		})();
+	</script>
+</body>
