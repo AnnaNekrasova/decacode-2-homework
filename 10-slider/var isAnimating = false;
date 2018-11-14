@@ -1,0 +1,2 @@
+var isAnimating = false;
+if (isAnimating)sn

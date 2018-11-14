@@ -1,0 +1,58 @@
+.dataSlides {
+    height: 200px;
+    background-color: green;
+    margin-top: 50px;
+    position: relative;
+}
+
+/*Элемент, внутри элемента с data-slides (Контент)*/
+.main {
+    margin: auto;
+    height: 200px;
+    background-color: red;
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.slider{
+	background-color: black;
+	height: 100%;
+
+}
+/*Элемент, внутри элемента с data-slides (Контент)*/
+.main {
+    margin: auto;
+    height: 200px;
+    background-color: red;
+    width: 300px;
+    overflow: hidden;
+
+}
+
+.page {
+    height: 150px;
+    margin-top: 25px;
+    background-color: blue;
+    width: 300px;
+    text-align: center;
+    color: white;
+    line-height: 150px;
+    font-size: 100px;
+    display: inline-block;
+}
+
+.buttonNext{
+	position: absolute;
+	right: 75px;
+	top: 100px;
+
+}
+
+.buttonPrev{
+	position: absolute;
+	left: 75px;
+	top: 100px;
+
+}
